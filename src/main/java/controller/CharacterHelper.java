@@ -10,7 +10,7 @@ import javax.persistence.TypedQuery;
 import model.Character;
 
 public class CharacterHelper {
-	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("characters");
+	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("Week7PartnerProject");
 	
 	public void addCharacter(Character add) {
 		EntityManager em = emfactory.createEntityManager();
@@ -22,9 +22,9 @@ public class CharacterHelper {
 	public void deleteCharacter(Character delete) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<Character> typedQuery = em.createQuery("SELECT c FROM Character ch WHERE ch.characterName = :findName and ch.characterClass = :findClass", Character.class);
+		TypedQuery<Character> typedQuery = em.createQuery("SELECT ch FROM Character ch WHERE ch.characterName = :findName and ch.characterClass = :findClass", Character.class);
 		typedQuery.setParameter("findName", delete.getCharacterName());
-		typedQuery.setParameter("findCLass", delete.getCharacterClass());
+		typedQuery.setParameter("findClass", delete.getCharacterClass());
 		typedQuery.setMaxResults(1);
 		Character result = typedQuery.getSingleResult();
 		em.remove(result);
@@ -36,9 +36,9 @@ public class CharacterHelper {
 	public Character findCharacter(Character find) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<Character> typedQuery = em.createQuery("SELECT c FROM Character ch WHERE ch.characterName = :findName and ch.characterClass = :findClass", Character.class);
+		TypedQuery<Character> typedQuery = em.createQuery("SELECT ch FROM Character ch WHERE ch.characterName = :findName and ch.characterClass = :findClass", Character.class);
 		typedQuery.setParameter("findName", find.getCharacterName());
-		typedQuery.setParameter("findCLass", find.getCharacterClass());
+		typedQuery.setParameter("findClass", find.getCharacterClass());
 		typedQuery.setMaxResults(1);
 		Character found;
 		List<Character> characterList = typedQuery.getResultList();

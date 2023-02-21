@@ -9,8 +9,8 @@ import javax.persistence.Table;
 @Table(name="creator")
 public class Creator {
 	/*
-	 * This class will create a one to many relationship with the Character class
-	 * Since every Creator can have many Characters
+	 * This class will create a one to many relationship with the CharacterListDetails class
+	 * one creator can create many Character Lists
 	 */
 	@Id
 	@GeneratedValue
@@ -27,6 +27,7 @@ public class Creator {
 		this.id = id;
 		this.name = name;
 	}
+	
 	public Creator(String name) {
 		super();
 		this.name = name;
@@ -50,6 +51,6 @@ public class Creator {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + "]";
+		return "Creator [id=" + id + ", name=" + name + "]";
 	}
 }

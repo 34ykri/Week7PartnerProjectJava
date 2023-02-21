@@ -32,13 +32,20 @@ public class Character {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Character(int id, String characterName, String characterClass, String characterRace, int characterLevel) {
+	public Character(String characterName, String characterClass, String characterRace, int characterLevel) {
 		super();
-		this.id = id;
 		this.characterName = characterName;
 		this.characterClass = characterClass;
 		this.characterRace = characterRace;
 		this.characterLevel = characterLevel;
+	}
+	
+	//USED FOR EDITING CHARACTER, otherwise use constructor above
+	public Character(String name, String chClass) {
+		// TODO Auto-generated constructor stub
+		super();
+		this.characterName = name;
+		this.characterClass = chClass;
 	}
 
 	public int getId() {
