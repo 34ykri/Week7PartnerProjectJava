@@ -40,7 +40,7 @@ public class Character {
 		this.characterLevel = characterLevel;
 	}
 	
-	//USED FOR EDITING CHARACTER, otherwise use constructor above
+	//USED FOR EDITING/Deleting CHARACTER, otherwise use constructor above
 	public Character(String name, String chClass) {
 		// TODO Auto-generated constructor stub
 		super();

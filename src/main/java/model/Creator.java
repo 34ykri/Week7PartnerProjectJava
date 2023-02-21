@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Table(name="creator")
 public class Creator {
 	/*
-	 * This class will create a one to many relationship with the CharacterListDetails class
+	 * This class will create a relationship with the CharacterListDetails class
 	 * one creator can create many Character Lists
 	 */
 	@Id
