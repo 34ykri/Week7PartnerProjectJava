@@ -5,17 +5,18 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>View your character</title>
+<title>View your characters</title>
 </head>
 <body>
 <form method="post" action="navigationServlet">
 <table>
-<c:forEach items="${requestScope.allItems}" var="currentitem">
+<c:forEach items="${requestScope.allCharacters}" var="currentitem">
 <tr>
 <td><input type="radio" name="id" value="${currentitem.id}"></td>
-<td>${currentitem.name}</td>
-<td>${currentitem.race}</td>
-<td>${currentitem.level}</td>
+<td>${currentitem.characterName}</td>
+<td>${currentitem.characterClass}</td>
+<td>${currentitem.characterRace}</td>
+<td>${currentitem.characterLevel}</td>
 </tr>
 </c:forEach>
 </table>
