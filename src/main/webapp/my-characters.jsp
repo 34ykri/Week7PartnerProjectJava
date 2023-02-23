@@ -24,5 +24,9 @@
 <input type="submit" value="delete" name="doThisToItem">
 <input type="submit" value="add" name="doThisToItem">
 </form>
+<a href="viewAllCharactersServlet">View all Characters</a>
+<a href="viewAllTeamsServlet">View all Teams</a>
+<a href="addCharacterForTeamServlet">Create a Team</a>
+
 </body>
 </html>
