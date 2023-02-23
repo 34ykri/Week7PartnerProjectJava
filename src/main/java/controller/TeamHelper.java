@@ -7,12 +7,12 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-import model.CharacterList;
+import model.Team;
 
-public class CharacterListHelper {
+public class TeamHelper {
 	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("Week7PartnerProject");
 	
-	public void addNewCharacterList(CharacterList c) {
+	public void addNewTeam(Team c) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(c);
@@ -20,19 +20,19 @@ public class CharacterListHelper {
 		em.close();
 	}
 	
-	public void deleteCharacterList(CharacterList delete) {
+	public void deleteTeam(Team delete) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<CharacterList> typedQuery = em.createQuery("SELECT cl FROM CharacterList cl WHERE cl.id = :selectedId", CharacterList.class);
+		TypedQuery<Team> typedQuery = em.createQuery("SELECT cl FROM CharacterList cl WHERE cl.id = :selectedId", Team.class);
 		typedQuery.setParameter("selectedId", delete.getId());
 		typedQuery.setMaxResults(1);
-		CharacterList result = typedQuery.getSingleResult();
+		Team result = typedQuery.getSingleResult();
 		em.remove(result);
 		em.getTransaction().commit();
 		em.close();
 	}
 	
-	public void editList(CharacterList edit) {
+	public void editTeam(Team edit) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
 		em.merge(edit);
@@ -40,16 +40,16 @@ public class CharacterListHelper {
 		em.close();
 	}
 	
-	public List<CharacterList> getCharacterLists(){
+	public List<Team> getTeams(){
 		EntityManager em = emfactory.createEntityManager();
-		List<CharacterList> allCharacterLists = em.createQuery("SELECT c FROM CharacterList c").getResultList();
+		List<Team> allCharacterLists = em.createQuery("SELECT c FROM CharacterList c").getResultList();
 		return allCharacterLists;
 	}
 	
-	public CharacterList searchForCharacterListByID(Integer id) {
+	public Team searchTeamByID(Integer id) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		CharacterList found = em.find(CharacterList.class, id);
+		Team found = em.find(Team.class, id);
 		em.close();
 		return found;
 	}
