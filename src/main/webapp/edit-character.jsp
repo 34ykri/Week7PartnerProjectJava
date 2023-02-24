@@ -9,9 +9,10 @@
 </head>
 <body>
 <form action="editCharacterServlet" method="post">
-Character Name: <input type="text" name="name" value="${itemToEdit.name}">
-Character Race: <input type="text" name="race" value="${itemToEdit.race }">
-Character Level: <input type="text" name="level" value="${itemToEdit.level }">
+Character Name: <input type="text" name="name" value="${itemToEdit.characterName}">
+Character Name: <input type="text" name="class" value="${itemToEdit.characterClass}">
+Character Race: <input type="text" name="race" value="${itemToEdit.characterRace}">
+Character Level: <input type="text" name="level" value="${itemToEdit.characterLevel}">
 <input type="hidden" name="id" value="${itemToEdit.id}">
 <input type="submit" value="Save Edited Item">
 </form>

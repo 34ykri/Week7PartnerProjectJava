@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-public class CharacterList {
+public class Team {
 	@Id
 	@GeneratedValue
 	private int id;
@@ -23,12 +23,12 @@ public class CharacterList {
 	@OneToMany(cascade=CascadeType.MERGE, fetch=FetchType.EAGER)
 	private List<Character> charactersList;
 	
-	public CharacterList() {
+	public Team() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public CharacterList(int id, String listName, LocalDate dateCreated, Creator creator,
+	public Team(int id, String listName, LocalDate dateCreated, Creator creator,
 			List<Character> charactersList) {
 		super();
 		this.id = id;
@@ -38,7 +38,7 @@ public class CharacterList {
 		this.charactersList = charactersList;
 	}
 
-	public CharacterList(String listName, LocalDate dateCreated, Creator creator, List<Character> charactersList) {
+	public Team(String listName, LocalDate dateCreated, Creator creator, List<Character> charactersList) {
 		super();
 		this.listName = listName;
 		this.dateCreated = dateCreated;
@@ -46,7 +46,7 @@ public class CharacterList {
 		this.charactersList = charactersList;
 	}
 
-	public CharacterList(String listName, LocalDate dateCreated, Creator creator) {
+	public Team(String listName, LocalDate dateCreated, Creator creator) {
 		super();
 		this.listName = listName;
 		this.dateCreated = dateCreated;
