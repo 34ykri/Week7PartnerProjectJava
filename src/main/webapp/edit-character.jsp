@@ -8,6 +8,7 @@
 <title>Edit your character.</title>
 </head>
 <body>
+<h1>Edit Character - ${itemToEdit.characterName}</h1>
 <form action="editCharacterServlet" method="post">
 Character Name: <input type="text" name="name" value="${itemToEdit.characterName}">
 Character Name: <input type="text" name="class" value="${itemToEdit.characterClass}">

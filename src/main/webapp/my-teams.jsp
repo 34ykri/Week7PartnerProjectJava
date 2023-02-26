@@ -9,24 +9,27 @@
 </head>
 <body>
 <form method="post" action= "teamNavigationServlet">
+<h1>My Teams</h1>
 <table>
-<c:forEach items="${requestScope.allLists}" var="currentlist">
+<c:forEach items="${requestScope.allTeams}" var="currentteam">
 <tr>
-<td><input type="radio" name="id" value="${currentlist.id) }"></td>
-<td><h2>${currentlist.listName}</h2></td>
-<tr><td colspan="3">Creation Date: ${currentlist.tripDate}</td></tr>
+<td><input type="radio" name="id" value="${currentteam.id}"></td>
+<td><h2>${currentteam.listName}</h2></td>
+<tr><td colspan="3">Creation Date: ${currentteam.dateCreated}</td></tr>
 <tr><td colspan="3">Creator:
-${currentlist.shopper.shopperName}</td></tr>
-<c:forEach var= "listVal" items = "${currentlist.listOfItems}">
+${currentteam.creator.name}</td></tr>
+<tr><td>Characters:</td></tr>
+<c:forEach var= "character" items = "${currentteam.charactersList}">
 <tr><td colspan="3">
-	${listVal.store}, ${listVal.item}</td></tr>
+	     ${character.characterName}, ${character.characterClass}, ${character.characterLevel}</td></tr>
 	</c:forEach>
 	</c:forEach></table>
-	<input type="submit" value="edit" name="doThisToList">
-	<input type="submit" value ="delete" name="doThisToList">
-	<input type="submit" value = "add" name= "doThisToList">
+	<input type="submit" value="edit" name="doThisToTeam">
+	<input type="submit" value ="delete" name="doThisToTeam">
+	<input type="submit" value = "add" name= "doThisToTeam">
 	</form>
-	<a href="addItemsForListServlet">Create a new team</a>
+	<a href="viewAllCharactersServlet">View all Characters</a>
+	<a href="addCharactersForTeamServlet">Create a new team</a>
 	<a href="index.html">Insert a new character</a>
 
 </body>

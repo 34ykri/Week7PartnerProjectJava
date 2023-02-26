@@ -23,7 +23,7 @@ public class TeamHelper {
 	public void deleteTeam(Team delete) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<Team> typedQuery = em.createQuery("SELECT cl FROM CharacterList cl WHERE cl.id = :selectedId", Team.class);
+		TypedQuery<Team> typedQuery = em.createQuery("SELECT t FROM Team t WHERE t.id = :selectedId", Team.class);
 		typedQuery.setParameter("selectedId", delete.getId());
 		typedQuery.setMaxResults(1);
 		Team result = typedQuery.getSingleResult();
@@ -42,7 +42,7 @@ public class TeamHelper {
 	
 	public List<Team> getTeams(){
 		EntityManager em = emfactory.createEntityManager();
-		List<Team> allCharacterLists = em.createQuery("SELECT c FROM CharacterList c").getResultList();
+		List<Team> allCharacterLists = em.createQuery("SELECT t FROM Team t").getResultList();
 		return allCharacterLists;
 	}
 	
