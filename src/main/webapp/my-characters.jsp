@@ -26,7 +26,7 @@
 </form>
 <a href="viewAllCharactersServlet">View all Characters</a>
 <a href="viewAllTeamsServlet">View all Teams</a>
-<a href="addCharactersForTeamServlet">Create a Team</a>
+<a href="addCharactersForTeamServlet">Create a Creator</a>
 
 </body>
 </html>
