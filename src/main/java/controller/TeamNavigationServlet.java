@@ -30,7 +30,7 @@ public class TeamNavigationServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		TeamHelper th = new TeamHelper();
-		String act = request.getParameter("doThisToItem");
+		String act = request.getParameter("doThisToTeam");
 
 		if(act == null) {
 			getServletContext().getRequestDispatcher("/viewAllTeamsServlet").forward(request, response);
@@ -67,7 +67,7 @@ public class TeamNavigationServlet extends HttpServlet {
 			}
 		}
 		else if(act.equals("add")) {
-			getServletContext().getRequestDispatcher("/add-team.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/addCharactersForTeamServlet").forward(request, response);
 		}	
 		
 	}

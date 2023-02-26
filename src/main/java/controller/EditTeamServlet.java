@@ -51,7 +51,7 @@ public class EditTeamServlet extends HttpServlet {
 		String month = request.getParameter("month");
 		String day = request.getParameter("day");
 		String year = request.getParameter("year");
-		String creatorName = request.getParameter("creator");
+		String creatorName = request.getParameter("name");
 		Creator newCreator = crh.findCreator(creatorName);
 		LocalDate ld;
 		try {
@@ -61,7 +61,7 @@ public class EditTeamServlet extends HttpServlet {
 			ld = LocalDate.now();
 		}
 		try {
-			String[] selectedCharacters = request.getParameterValues("allItemsToAdd");
+			String[] selectedCharacters = request.getParameterValues("allCharacters");
 			List<Character> selectedCharactersInTeam = new ArrayList<Character>();
 			for(int i = 0; i < selectedCharacters.length; i++) {
 				Character c = ch.findCharacterID(Integer.parseInt(selectedCharacters[i]));

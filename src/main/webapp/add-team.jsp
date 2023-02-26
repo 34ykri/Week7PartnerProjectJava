@@ -13,15 +13,15 @@ Team Name: <input type="text" name ="listName"><br/>
 Creation Date: <input type="text" name="month" placeholder="mm" size="4">
 			<input type="text" name="day" placeholder="dd" size="4">
 			<input type="text" name="year" placeholder="yyyy" size="4">
-Creator Name: <input type="text" name="creatorName"><br/>
-Available Teams:<br/>
+Creator Name: <input type="text" name="creator"><br/>
+Available Characters:<br/>
 <select name="allCharactersToAdd" multiple size="6">
-<c:forEach items="${requestScope.allItems}" var="currentitem">
-<option value = "${currentitem.id}">${currentitem.store} | ${currentitem.item}</option>
+<c:forEach items="${requestScope.allCharacters}" var="currentchar">
+<option value = "${currentchar.id}">${currentchar.characterName}, ${currentchar.characterClass}, ${currentchar.characterLevel}</option>
 </c:forEach>
 </select>
 <br/>
-<input type="submit" value="Create List and Add Items">
+<input type="submit" value="Create Team and Add Characters">
 </form>
 <a href="index.html">Go add new characters instead.</a>
 </body>
